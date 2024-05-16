@@ -20,12 +20,12 @@ from muvie_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/directors/', views.directors),
-    path('api/v1/directors/<int:id>/', views.director_detail),
-    path('api/v1/movies/', views.movies),
-    path('api/v1/movies/<int:id>/', views.movie_detail),
-    path('api/v1/reviews/', views.reviews),
-    path('api/v1/reviews/<int:id>/', views.review_detail),
+    path('api/v1/directors/', views.DirectorListAPIView.as_view()),
+    path('api/v1/directors/<int:id>/', views.DirectorDetailAPIView.as_view()),
+    path('api/v1/movies/', views.MovieListAPIView.as_view()),
+    path('api/v1/movies/<int:id>/', views.MovieDetailAPIView.as_view()),
+    path('api/v1/reviews/', views.ReviewsListAPIView.as_view()),
+    path('api/v1/reviews/<int:id>/', views.ReviewsDetailAPIView.as_view()),
     path('api/v1/users/', include('users.urls')),
 
 ]
